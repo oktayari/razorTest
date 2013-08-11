@@ -1,0 +1,8 @@
+﻿@{
+    var dbb = Database.Open("razorTest");
+    var datab = dbb.Query("SELECT Isim, Yas FROM Kisi");
+    var keyb = new Chart(width: 600, height: 400,theme: ChartTheme.Green)
+                .AddTitle("Kisi Yaslari B")
+                .DataBindTable(dataSource: datab, xField: "Isim")
+                .Write();
+}

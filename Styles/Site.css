@@ -1,0 +1,179 @@
+
+#container{
+   min-height:100%;
+   position:relative;
+   left:5%;
+   right: 5%;
+   
+}
+
+#top {
+    position: absolute;
+    height: 140px;
+    text-align: left;
+    background-color: black;
+    color: white;   
+    font-size: large;
+    font-weight: bold;
+    padding: 5px;
+    padding-bottom: 10px;
+    float: left;
+}
+#header {
+    width: 90%;
+    height: 150px;
+    text-align: center;
+    background-color: black;
+    color: white;   
+    padding: 5px;
+   
+}
+
+
+#search {
+     width: 90%;
+}
+
+#innerSearch {
+    width: 80%;
+    background-color: #C0C0C0;
+    color: white;
+    float: left;
+   
+}
+
+#loginDiv {
+     display: block;
+    width: 20%;
+    background-color: black;
+    color: lime;
+    float: left;
+}
+
+#gravatar {
+    
+    float: right;
+}
+
+#navigation {
+     position:initial;
+    width: 20%;
+    height: auto  ;
+    margin: 5px;
+    padding: 1px;
+    background-color: black;
+    color: white;
+   
+    
+}
+
+
+#body {
+    padding: 5px 10px 10px 20px;
+    width: 70%;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px black solid;
+   
+    background-color: #ffffff;
+    font: 75%/1.75em "Trebuchet MS", Verdana, sans-serif;
+    color: #006600;
+ 
+  
+}
+
+
+#footer {
+   
+    width: 90%;
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    float: left;
+}
+
+#sidebar {
+    margin: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 50px;
+    left: 314px;
+}
+
+
+.float-right {
+    float: right;
+}
+
+.kisi {
+    width: 100px;
+    font-weight: bold;
+}
+
+fieldset {
+    padding: 1em; 
+    border: 1px solid;
+     width: 35em;
+     
+}
+
+legend {
+    padding: 2px 4px;
+     border: 1px solid;
+      font-weight:bold;
+      
+}
+.validation-summary-errors {
+    font-weight:bold; 
+    color:red; 
+    font-size: 11pt;
+    
+}
+
+h1 {
+    border-bottom: 3px solid #cc9900;
+    font: 2.75em/1.75em Georgia, serif;
+    color: #996600;
+}
+
+ul {
+    list-style-type: none;
+}
+
+table, th, td {
+       
+border: solid 1px black;
+
+padding: 1px;
+}
+
+
+label {
+    float:left; 
+    width: 8em; 
+    text-align: right; 
+    margin-right: 0.5em;
+}
+
+#list {
+    margin: 5px;
+    padding: 1em 0 0 0;
+    background-color: #ffffff;
+    color: #996600;
+    width: 50px;
+    float: left;
+}
+
+.grid { margin: 4px; border-collapse: collapse; width: 600px; }
+.head { background-color: black; font-weight: bold; color: yellow; }
+.grid th, .grid td { border: 1px solid #C0C0C0; padding: 5px; }
+.alt { background-color: #E8E8E8; color: #000; }
+
+a {
+    text-decoration: none;
+}
+a:link {color:#006600;}      /* unvisited link */
+a:visited {color:#006600;}  /* visited link */
+a:hover {color:red;}  /* mouse over link */
+a:active {color:#006600;}  /* selected link */ 

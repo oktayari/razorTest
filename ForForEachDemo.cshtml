@@ -1,0 +1,17 @@
+﻿<h1> ForForEachDemo </h1>
+
+        @for(var i = 10; i < 21; i++)
+                {
+                    <p style="font-size: @(i + "pt")">Font Buyuklugu: @i</p>
+                }
+
+
+        <ul>
+            @foreach (var serverVariable in Request.ServerVariables)
+            {
+                <li>@serverVariable</li>
+            }
+        </ul>
+
+
+

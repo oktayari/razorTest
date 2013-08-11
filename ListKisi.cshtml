@@ -1,0 +1,39 @@
+﻿@{ 
+    var db = Database.Open("razorTest");
+    var selectQueryString = "SELECT * FROM Kisi ORDER BY Isim";
+} 
+
+
+<h1> Db => table td tr Demo </h1></br>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Isim</th>
+        <th>Soyad</th>
+        <th>Yas</th>
+        <th>--</th>
+        <th>--</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var row in db.Query(selectQueryString)){
+        <tr>
+            <td>@row.Id</td>
+            <td>@row.Isim</td>
+            <td>@row.Soyad</td>
+            <td>@row.Yas</td>
+            <td style="text-align: center"> <a class="button" href="@Href("~/EditKisi", row.Id)"> -Duzenle- </a></td>
+            <td style="text-align: center"><a class="button" href="@Href("~/DeleteKisi", row.Id)">  --Sil--  </a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+</br>
+<div id="yeniKayit" class="button" >
+    <a href="NewKisi">- Yeni Kayit -</a>
+</div>
+
+
+

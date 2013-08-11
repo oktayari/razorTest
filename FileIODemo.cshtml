@@ -1,0 +1,96 @@
+﻿@{
+var result = "";
+
+if (IsPost)
+{
+    var isim = Request["Isim"];
+    var soyad = Request["Soyad"];
+    var yas = Request["Yas"];
+
+    var kisiData = isim + "," + soyad + "," + yas + Environment.NewLine; 
+
+    var dataFile = Server.MapPath("~/App_Data/data.txt");
+
+    if(!File.Exists(dataFile)){
+            File.WriteAllText(@dataFile, kisiData);
+        }else{
+            File.AppendAllText (@dataFile, kisiData);
+        }
+    result = "Kisi Dosyaya Kaydedildi!";
+    }
+}
+
+@{
+    var resultb = "";
+    Array userDataR = null;
+    char[] delimiterChar = {','};
+    var dataFileR = Server.MapPath("~/App_Data/data.txt");
+
+    if (File.Exists(dataFileR)) {
+            userDataR = File.ReadAllLines(dataFileR);
+            if (userDataR == null) {
+                resultb = "Dosyada Kayit Yok";
+            }
+        }
+         else {
+            resultb = "Dosya Bulunamadi?"; 
+        }
+}
+
+<h1>FileIO Demos </h1>
+
+<p><a href="/Shared/FileUpload"> Dosya Yukle </a></p>
+
+<form id="deleteFile" method="POST" action="/Shared/FileDelete">
+    <input id="fileName" name="fileName" type="text" value="data.txt" disabled="disabled" />
+    <input type="submit" value="Sil"/>
+</form>
+
+<form id="form1" method="post">
+    <div>
+        <table>
+            <tr>
+            <td>Isim:</td>
+                <td><input id="Isim" name="Isim" type="text" /></td>
+            </tr>
+            <tr>
+            <td>Soyad:</td>
+                <td><input id="Soyad" name="Soyad" type="text" /></td>
+            </tr>
+            <tr>
+            <td>Yas:</td>
+                <td><input id="Yas" name="Yas" type="text" /></td>
+            </tr>
+            <tr>
+            <td></td>
+                <td><input type="submit" value="Kaydet"/></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        @if(result != ""){
+            <p>Sonuc: @result</p>
+        }
+    </div> 
+</form>
+
+<div>
+<h1>Dosyadan Bilgilerin okunmasi</h1>
+    @resultb
+
+    @if (resultb == "") {
+        <ol> 
+            @foreach (string dataLine in userDataR) {
+                <li>
+                    Kisi:
+                    <ul>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar)) {
+                             <li>@dataItem</li >
+                        }
+                    </ul>
+                </li>
+            }
+        </ol>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@{
+      
+    Page.Title = "Kayit Islemleri";
+}
+
+@if (!WebSecurity.IsAuthenticated) {
+    <hgroup class="title">
+        <h1>@Page.Title.</h1>
+        <h2>But you're not done yet!</h2>
+    </hgroup>
+
+    <p>
+       Activasyon icin Email gonderilmistir.
+    </p>
+} else {
+    <hgroup class="title">
+        <h1>@Page.Title.</h1>
+        <h2>Islem Tamam.</h2>
+    </hgroup>
+
+    <p>
+       Konfirmasyon islemi tamamlanmak uzere . Devam ediniz.
+    </p>
+}

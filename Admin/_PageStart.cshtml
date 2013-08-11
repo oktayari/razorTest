@@ -1,0 +1,19 @@
+﻿@{ 
+    try
+    {
+        if(WebSecurity.IsAuthenticated)
+        {
+          RunPage();
+        }else
+        {
+            Response.Redirect("~/Account/Login.cshtml");
+        }
+    }
+    catch (Exception ex)
+    {
+        Response.Redirect("~/Error/Error.cshtml?source=" +  
+        HttpUtility.UrlEncode(Request.AppRelativeCurrentExecutionFilePath) + 
+        "==>" +
+        ex.Message);
+    }
+}

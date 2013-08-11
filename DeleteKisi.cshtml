@@ -1,0 +1,29 @@
+﻿@{
+    var db = Database.Open("razorTest");
+
+    var KisiId = UrlData[0];
+    if (KisiId.IsEmpty()) {
+        Response.Redirect(@Href("~/ListKisi"));
+    }
+    var kisi = db.QuerySingle("SELECT * FROM Kisi WHERE ID = @0", KisiId);
+
+        if( IsPost && !KisiId.IsEmpty()) { 
+             var deleteQueryString = "DELETE FROM Kisi WHERE Id=@0";
+             db.Execute(deleteQueryString, KisiId); 
+            Response.Redirect("~/ListKisi");
+        }
+}
+
+
+<h1>Kisi SIL Onay</h1>
+    <form method="post" action="" name="form">
+        <p>Kisiyi silmek istediginizden eminmisiniz?</p>
+        <p> Isim: @kisi.Isim <br /> 
+            Soyad: @kisi.Soyad <br />
+            Yas: @kisi.Yas</p>
+        <p><input type="submit" value="Sil" />
+        <button type="button" id="cancel" onclick="window.history.back()"> <br />Iptal</button>
+    </form>
+
+
+

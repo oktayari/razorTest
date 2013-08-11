@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html>
+
+<style>
+    /*   HEADER   */
+    header.vcard {
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .fn {
+        font-size: 2.7em;
+        font-weight: bold;
+        padding: 5px 0 5px 10px;
+    }
+
+    .role {
+        background: #999;
+        color: #FCFCFC;
+        font-weight: normal;
+        margin: 4px 0 13px;
+        padding: 5px 5px 5px 10px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .contact {
+        list-style: none;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+        .contact li {
+            border-right: 1px solid #ccc;
+            display: inline;
+            float: left;
+            font-size: 0.8em;
+            padding: 2px 0;
+            text-align: center;
+            width: 19.5%;
+            overflow: hidden;
+        }
+
+            .contact li:last-child {
+                border: none;
+            }
+
+        .contact a {
+            color: #000;
+        }
+
+            .contact a:hover {
+                background-color: #eee;
+                text-decoration: none;
+            }
+
+
+    /*   CONTENT   */
+    section {
+        font-size: 0.9em;
+        margin: 30px 0;
+        overflow: hidden;
+    }
+
+        section h1 {
+            border-left: 2px solid #DDD;
+            font-size: 1.25em;
+            margin-bottom: 10px;
+            padding-left: 5px;
+            text-transform: uppercase;
+        }
+
+        section p {
+            line-height: 1.5em;
+            padding: 0 20px 5px;
+        }
+
+    #skills dl {
+        margin-left: 15px;
+    }
+
+        #skills dl dt {
+            clear: left;
+            display: inline;
+            float: left;
+            margin: 10px 5px 10px 0;
+            padding: 2px;
+            text-align: right;
+            width: 150px;
+        }
+
+        #skills dl dd {
+            background: #dfdfdf;
+            display: inline;
+            float: left;
+            font-size: 0.8em;
+            margin: 10px 4px;
+            padding: 4px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+            cursor: default;
+        }
+
+            #skills dl dd:hover {
+                background-color: #ccc;
+                -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+                box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+            }
+
+    #experience article {
+        margin: 15px 0 37px 95px;
+        padding-left: 5px;
+        position: relative;
+        border: 1px solid #FCFCFC;
+    }
+
+        #experience article:last-child {
+            margin-bottom: 0;
+        }
+
+        #experience article:hover {
+            border: 1px dotted #ddd;
+            background: #fefefe;
+        }
+
+        #experience article h1 {
+            border: none;
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: bold;
+            padding: 0;
+            text-transform: none;
+        }
+
+            #experience article h1 a {
+                color: #333;
+                text-decoration: none;
+            }
+
+                #experience article h1 a:hover {
+                    background-color: #333;
+                    color: #eee;
+                }
+
+            #experience article h1 span {
+                color: #777;
+                font-size: 0.8em;
+                font-weight: normal;
+            }
+
+        #experience article h2 {
+            background: #eee;
+            display: inline;
+            font-size: 0.9em;
+            font-weight: normal;
+            padding: 3px;
+        }
+
+        #experience article .start, #experience article .end {
+            background: #fff;
+            border-top: 1px dashed #ddd;
+            font-size: 0.75em;
+            left: -80px;
+            padding: 4px 0;
+            position: absolute;
+            text-align: center;
+            top: 19px;
+            width: 60px;
+        }
+
+        #experience article .end {
+            top: 0;
+            border: none;
+        }
+
+        #experience article p {
+            font-size: 0.9em;
+            line-height: 22px;
+            margin: 10px 0 0;
+            padding-left: 0;
+        }
+
+    #education h2 {
+        padding-left: 20px;
+    }
+
+    #education p {
+        padding-top: 5px;
+    }
+
+    #hobbies ul {
+        font-size: 0.9em;
+        margin-left: 20px;
+    }
+
+        #hobbies ul li {
+            margin: 10px 0;
+            list-style: circle inside none;
+            cursor: default;
+        }
+
+            #hobbies ul li:hover {
+                list-style: disc inside none;
+            }
+
+            #hobbies ul li a {
+                color: #555;
+            }
+
+                #hobbies ul li a:hover {
+                    background-color: #555;
+                    color: #eee;
+                    text-decoration: none;
+                }
+
+
+    #courses ul {
+        font-size: 0.9em;
+        margin-left: 20px;
+    }
+
+        #courses ul li {
+            margin: 10px 0;
+            list-style: circle inside none;
+            cursor: default;
+        }
+
+            #courses ul li:hover {
+                list-style: disc inside none;
+            }
+
+            #courses ul li a {
+                color: #555;
+            }
+
+                #courses ul li a:hover {
+                    background-color: #555;
+                    color: #eee;
+                    text-decoration: none;
+                }
+
+
+    #summary ul {
+        font-size: 0.9em;
+        margin-left: 20px;
+    }
+
+        #summary ul li {
+            margin: 10px 0;
+            list-style: circle inside none;
+            cursor: default;
+        }
+
+            #summary ul li:hover {
+                list-style: disc inside none;
+            }
+
+            #summary ul li a {
+                color: #555;
+            }
+
+                #summary ul li a:hover {
+                    background-color: #555;
+                    color: #eee;
+                    text-decoration: none;
+                }
+
+
+    /* MEDIA QUERIES */
+    @media screen and (max-width:768px) {
+        .contact li {
+            font-size: 0.7em;
+        }
+    }
+
+    @media screen and (max-width:680px) {
+        #skills dl dt {
+            display: block;
+            float: none;
+            margin: 0;
+            text-align: left;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        .contact li {
+            border-right: medium none;
+            display: block;
+            float: none;
+            font-size: 1em;
+            overflow: hidden;
+            padding: 6px 10px;
+            text-align: left;
+            width: auto;
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        #experience article {
+            margin: 40px 0 37px;
+        }
+
+            #experience article .start, #experience article .end {
+                left: 0;
+                top: -25px;
+                border: none;
+                border-right: 1px dashed #ddd;
+            }
+
+            #experience article .end {
+                left: 61px;
+                top: -25px;
+                border: none;
+            }
+    }
+</style>
+
+
+
+<header class="vcard">
+    <h1 class="fn">Oktay ARI</h1>
+    <h3 class="role">.Net CSharp SoftWare  &amp; Application Developer </h3>
+    <ul class="contact">
+        <li class="email">oktayari@yahoo.com</li>
+        <li class="tel">+90(544)518-6357</li>
+        <li class="url"><a href="http://oktayari70.blogspot.com/" title="Oktay ARI Blog">Blog</a></li>
+        <li class="url"><a href="http://tr.linkedin.com/pub/oktay-ari/29/757/a74/" title="Oktay ARI Linkedin Profile">Linkedin Profile</a></li>
+        <li class="adr"><span class="locality">Izmir</span>, <span class="country-name">Turkey</span></li>
+    </ul>
+
+</header>
+
+
+
+<section id="education">
+    <h1>Education</h1>
+    <ul>
+        <li>
+            <h3>University of Istanbul</h3>
+        </li>
+    </ul>
+    <ul>
+        <ul>
+            <li>BS, Electric &amp; Electronic Engineering 1992-1996</li>
+        </ul>
+    </ul>
+</section>
+
+<section id="summary">
+    <h1>Summary</h1>
+    <ul>
+        <li>Applying a process of algorithm before development and building it with OOP Infrastructure
+                </li>
+        <li>Analyzing, developing and testing in whole development process (Sourcesafe, TFS etc.)</li>
+        <li>Coding with ASP.NET (using with C#, Ajax, JavaScript, .Net 2.0-Net 4.0, MS SQL Server, XML- XSL/HTML, MVC, Jquery)
+                </li>
+        <li>Database Programing with T-SQL/PL-SQL 
+                </li>
+        <li>Engineering web development, all layers, from database to services to user interfaces 
+                </li>
+        <li>Analysis and design of databases and user interfaces 
+                </li>
+        <li>Implementing software development life cycle policies and procedures 
+                </li>
+        <li>Working and supporting multiple projects 
+
+                </li>
+        <li>Highly adaptable in quickly changing technical environments with very strong organizational and analytical skills .&nbsp;</li>
+    </ul>
+    <br />
+    <ul>
+       <li>Learning :
+            <ul>
+				<li>Core Java and Android : using Eclipse and MonoFor Android (XMarin) on VS2012:</li>
+				<li>JS Libraries: Backbone.js, Underscore.js, Twitter BootStrap, Mustache.js</li>
+				<li>NoSQL : MongoDB</li>
+				<li> SalesForce</li>
+					<ul>
+						<li>Apex</li>
+						<li>Visualforce</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+    </ul>
+    <br />
+
+</section>
+
+<section id="skills">
+    <h1>Skills</h1>
+    <dl>
+        <dt>Design</dt>
+        <dd title="Design of websites on screen, tablets and mobiles">Web Design</dd>
+        <dd title="Design of interfaces for apps and web based systems">User Interface Design</dd>
+        <dd title="Sketching and wireframing using  Mockup">Wire-Framing / Mockups</dd>
+        <dd title="Design Desktops Screens">Windows Forms</dd>
+        <dd title="Design Mobile Screens">Windows Mobile 5.0 -6.0</dd>
+        <dt>Front-End Development</dt>
+        <dd title="Hyper Text Markup Language">HTML5</dd>
+        <dd title="Cascading Style Sheets">CSS3</dd>
+        <dd title="Front-end programming language">JavaScript</dd>
+        <dd title="Javascript Library">jQuery</dd>
+        <dd title="Ensuring website/app has usable experience on all platforms">Cross-browser Compatibility</dd>
+        <dd title="Coding markup in an accessible, usable and semantic way, using best practices and avoiding proprietary rules.">Web Standards</dd>
+        <dd title="Windows Form Based Development">Windows Forms</dd>
+        <dd title="Mobile Form Based Development">Windows Mobile 5-6</dd>
+        <dd title="JavaScript Programing ">TypeScript</dd>
+        <dt>Back-end / Integration</dt>
+        <dd title="CSharp: Microsoft .Net Programming Language">CSharp</dd>
+        <dd title="MS Web Framework">Asp.Net</dd>
+        <dd title="ASP.NET MVC4 Engine">Razor</dd>
+        <dd title="Object Oriented Patterns">OOP</dd>
+        <dd title="GoF Design Patterns">Design Patterns</dd>
+        <dd title="Patterns">IoC</dd>
+        <dd title="Patterns">Dependency Injection</dd>
+        <dd title="Represental State Transfer">REST</dd>
+        <dd title="Windows Communication Foundation">WCF</dd>
+        <dd title="Unified Modeling Language">UML</dd>
+
+        <dd title="Microsoft ORM">Entity Framework 4-5-6</dd>
+        <dd title="Language Integrated Query">LINQ</dd>
+        <dd title="Microsoft Messaging Queue">MSMQ</dd>
+        <dt>Others</dt>
+        <dd title="Visual Studio Source Control">TFS Version Control</dd>
+        <dd title="Source Safe">Source Safe</dd>
+        <dd title="GitHub">GitHub</dd>
+
+
+    </dl>
+</section>
+
+<section id="experience">
+    <h1>Work Experience</h1>
+    <article>
+        <ul>
+            <li>
+                <h1>Oktay Ari&nbsp; Freelancer <time class="start" datetime="2012-05-01">May 2012</time>
+                    <span class="end">Present</span></h1>
+            </li>
+        </ul>
+        <ul style="margin-left: 40px;">
+            <li>
+                <h3>.Net CSharp Application &amp; Software Developer</h3>
+            </li>
+        </ul>
+        <br />
+        <span class="end"></span>
+
+    </article>
+    <article>
+        <ul>
+            <li>
+                <h1>Mikrosel Bilisim Sistemleri Ltd. Istanbul <time class="start" datetime="2011-01-01">January 2011</time>
+                    <time class="end" datetime="2012-01-04">May 2012</time></h1>
+            </li>
+        </ul>
+        <ul style="margin-left: 40px;">
+            <li>
+                <h3>FOL Team member : Application Developer</h3>
+            </li>
+        </ul>
+        <time class="end" datetime="2012-01-04"></time>
+        <ul style="margin-left: 80px;">
+            <li>
+                <h2>Project FOL (Factory Online)</h2>
+            </li>
+        </ul>
+        <div style="margin-left: 120px;">
+            FOL is a Manufacturing intelligence and Factory Performance Management system used by Unilever Turkey
+           
+            <br />
+            <b>Gerçek Zamanlı Üretim Yazılım Çözümleri</b>:
+        </div>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <li>Üretimden Veri Toplama ve Analiz</li>
+                        <li>KPI Ölçme, Görsel Fabrika</li>
+                        <li>Gerçek Zamanlı Verimlilik (OEE) Takibi</li>
+                        <li>TPM (Önleyici Bakım) Yönetimi</li>
+                        <li>Otonom Bakım Yönetim Sistemi</li>
+                        <li>Süreç Parametreleri Takibi ve SPC</li>
+                        <li>Hurda, Fire ve Atıkların Canlı Takibi</li>
+                        <li>Sürekli Gelişim - Kaizen Yönetimi</li>
+                        <li>Yetkinlik Bazlı Eğitim Yönetimi</li>
+                        <li>İzlenebilirlik Sistemi Yönetimi</li>
+                        <li>İzin, Fazla Mesai ve Vardiya Yönetimi</li>
+                        <li>Fiziksel Kimyasal Analiz Yonetimi</li>
+                        <li>CRQS Ticari Risk ve Kalite Standart Takibi.....</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <ul>
+                            <li>
+                                <a href="http://www.mikrosel.com.tr/tr/urunlerimiz_1.htm">Mikrosel FOL Project Details</a></li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </article>
+    <article>
+        <ul>
+            <li>
+                <h1>Orcom Telecommunication A.S. Istanbul <time class="start" datetime="2010-01-01">January 2010</time>
+                    <time class="end" datetime="2011-01-01">January 2011</time></h1>
+            </li>
+        </ul>
+        <ul style="margin-left: 40px;">
+            <li>
+                <h3>Application Developer</h3>
+            </li>
+        </ul>
+        <div style="margin-left: 80px;">
+            &nbsp;
+Custom projects , PBX Logger(call states for internal &amp; external callings ) for 
+                Siemens Hi-Path 3000-3800 Series using TAPI170 Siemens API ,ASP.Net , C# , SQL Express.
+           
+        </div>
+    </article>
+    <article>
+        <ul>
+            <li>
+                <h1>Mikrosel Bilisim Sistemleri Ltd. Istanbul&nbsp; <time class="start" datetime="2006-01-01">January 2006</time>
+                    <time class="end" datetime="2010-01-01">January 2010</time></h1>
+            </li>
+        </ul>
+        <ul style="margin-left: 40px;">
+            <li>
+                <h3>FOL Team member : Application Developer</h3>
+            </li>
+        </ul>
+        <time class="end" datetime="2012-01-04"></time>
+        <ul style="margin-left: 80px;">
+            <li>
+                <h2>Project FOL (Factory Online)</h2>
+            </li>
+        </ul>
+        <div style="margin-left: 120px;">
+            FOL is a Manufacturing intelligence and Factory Performance Management system used by Unilever Turkey
+           
+            <br />
+            <b>Real Time Manufacturing Software Solutions</b>:
+        </div>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <li>Manufacturing Data Collection/ Analysis</li>
+                        <li>KPI Measurement &amp; Reporting: Visual Factory</li>
+                        <li>Real-Time Efficiency -OEE- Tracking</li>
+                        <li>TPM - Total Preventive Maintenance</li>
+                        <li>Autonomous Maintenance</li>
+                        <li>Inspection and Statistical Process Control System</li>
+                        <li>Scrap, Waste &amp; Defect Reporting</li>
+                        <li>Continious Improvement - Kaizen</li>
+                        <li>Skill Based Training Management</li>
+                        <li>Traceability Management</li>
+                        <li>Overtime/ Leave Mgt, Shift Planning</li>
+                        <li>Physical and Chemical Analysis Management</li>
+                        <li>CRQS Commercial Risk and Quality Standard</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <ul>
+                            <li>
+                                <a href="http://www.mikrosel.com.tr/tr/urunlerimiz_1.htm">Mikrosel FOL Project Details</a></li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </article>
+
+    <article>
+        <ul>
+            <li>
+                <h1>Havelsan Ankara<time class="start" datetime="2005-01-01"> January 2005</time>
+                    <time class="end" datetime="2006-01-01">January 2006</time></h1>
+            </li>
+        </ul>
+        <ul style="margin-left: 40px;">
+            <li>
+                <h3>SAP Basis Team Member&nbsp;<time class="end" datetime="2006-01-01"></time></h3>
+            </li>
+        </ul>
+        <ul style="margin-left: 80px;">
+            <li>&nbsp;
+                <b>SAP Basis Administration : </b></li>
+        </ul>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <li>Sizing, Installation and Configuration </li>
+                        <li>Backup Configuration and Disaster Recovery </li>
+                        <li>System Security and Authorization </li>
+                        <li>Kernel and Support Package Maintenance </li>
+                        <li>Performance Analysis and Tuning </li>
+                        <li>System Enhancements </li>
+                        <li>Client Management </li>
+                        <li>CUA implementation </li>
+                        <li>Systems Integration with non-SAP system databases </li>
+                        <li>TMS Configuration and Management </li>
+                        <li>Monitoring and Preventing System Bottlenecks  ORACLE &amp; MS SQL Server </li>
+                        <li>Installation, Version Upgrade</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </article>
+
+    <article>
+        <h1>Unilever&nbsp; Istanbul <time class="start" datetime="1999-01-01">January 1999</time>
+            <time class="end" datetime="2005-01-01">January 2005</time>
+        </h1>
+        <ul style="margin-left: 40px;">
+            <li>
+                <h3>SAP Basis Team Member&nbsp;<time class="end" datetime="2006-01-01"></time></h3>
+            </li>
+        </ul>
+        <ul style="margin-left: 80px;">
+            <li>&nbsp;
+                <b>SAP Basis Administration : </b></li>
+        </ul>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <li>Sizing, Installation and Configuration </li>
+                        <li>Backup Configuration and Disaster Recovery </li>
+                        <li>System Security and Authorization </li>
+                        <li>Kernel and Support Package Maintenance </li>
+                        <li>Performance Analysis and Tuning </li>
+                        <li>System Enhancements </li>
+                        <li>Client Management </li>
+                        <li>CUA implementation </li>
+                        <li>Systems Integration with non-SAP system databases </li>
+                        <li>TMS Configuration and Management </li>
+                        <li>Monitoring and Preventing System Bottlenecks  ORACLE &amp; MS SQL Server </li>
+                        <li>Installation, Version Upgrade</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </article>
+</section>
+
+<section id="certifications">
+    <h1>Certifications</h1>
+    <ul>
+        <li>
+            <h3>SAP Turkey December 2004</h3>
+        </li>
+    </ul>
+    <ul>
+        <ul>
+            <li>SAP Technical Consultant:</li>
+            <ul>
+                <li>mySAP Technology Administration 2002</li>
+            </ul>
+            <ul>
+                <li>DB Administration (ORACLE) 2002</li>
+            </ul>
+        </ul>
+    </ul>
+</section>
+
+<section id="certifications">
+    <ul>
+        <li>
+            <h3>Oracle Turkey - March 2005</h3>
+        </li>
+    </ul>
+    <ul>
+        <ul>
+            <li>Oracle 9i OCP DBA:</li>
+            <ul>
+                <li>&nbsp;Oracle9i Database Administrator Certified Professional</li>
+            </ul>
+        </ul>
+    </ul>
+</section>
+
+<section id="certifications">
+    <ul>
+        <li>
+            <h3>IBM Turkey - January 2005</h3>
+            <ul>
+                <li>IBM-e-Server Certified Specialist :<br />
+                    <ul>
+                        <li>pSeries Administration and Support for AIX 5L v5.2
+
+    </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section id="courses">
+    <h1>Courses</h1>
+    <ul>
+        <li>OOP Principles &amp; Design Patterns </li>
+        <li>Enterprise Design Patterns &amp; Architectures</li>
+        <li>Enterprise Library 5.0</li>
+    </ul>
+</section>
+
+<section id="hobbies">
+    <h1>Hobbies &amp; Interests</h1>
+    <ul>
+        <li>Playing Guitar </li>
+        <li>Travelling</li>
+        <li>Learning other programing languages</li>
+    </ul>
+    <br />
+
+</section>
+
+
+
+
+
+
+

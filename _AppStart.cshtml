@@ -1,0 +1,13 @@
+﻿@{
+     WebSecurity.InitializeDatabaseConnection("razorTest", "UserProfile", "UserId", "Email", autoCreateTables: true);
+
+      WebMail.SmtpServer = "smtp.gmail.com";
+      WebMail.UserName = "XXX";
+      WebMail.Password = "XXX";
+      WebMail.From = "oktayari@oka.com";
+      WebMail.EnableSsl = true; 
+      WebMail.SmtpPort = 587;
+
+ AppState["appStart"] = "Web Page Razor Global Variable from _AppStart.cshtml ";
+
+}

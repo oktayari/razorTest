@@ -1,0 +1,11 @@
+﻿@{
+    var dba = Database.Open("razorTest");
+    var dataa = dba.Query("SELECT Isim, Yas FROM Kisi");
+    var keya = new Chart(width: 600, height: 400)
+                .AddTitle("Kisi Yaslari A")
+                .DataBindTable(dataa, "Isim")
+                .AddSeries("Default",
+                    xValue: dataa, xField: "Isim",
+                    yValues: dataa, yFields: "Yas")
+                .Write();
+}

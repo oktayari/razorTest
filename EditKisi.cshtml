@@ -1,0 +1,66 @@
+﻿@{
+    var db = Database.Open("razorTest");
+    var selectQueryString = "SELECT * FROM Kisi WHERE Id=@0";
+
+    var KisiId = UrlData[0];
+
+    if (KisiId.IsEmpty()) {
+         Response.Redirect(@Href("~/ListKisi"));
+    } 
+    var row = db.QuerySingle(selectQueryString, KisiId);
+    var Isim = row.Isim;
+    var Soyad = row.Soyad;
+    var Yas = row.Yas;
+
+    if (IsPost) {
+        Isim = Request["Isim"];
+        if (String.IsNullOrEmpty(Isim)) {
+            ModelState.AddError("Isim", "Isim Zorunlu Alan.");
+        }
+
+        Soyad = Request["Soyad"];
+        if (String.IsNullOrEmpty(Soyad)) {
+             ModelState.AddError("Soyad", "Soyad Zorunlu Alan.");
+        }
+
+        Yas = Request["Yas"];
+        if (String.IsNullOrEmpty(Yas)) {
+            ModelState.AddError("Yas", "Yas Zorunlu Alan.");
+        }
+
+    if(ModelState.IsValid) {
+        var updateQueryString = 
+        "UPDATE Kisi SET Isim=@0, Soyad=@1, Yas=@2 WHERE Id=@3" ;
+        db.Execute(updateQueryString, Isim, Soyad, Yas, KisiId);
+        Response.Redirect(@Href("~/ListKisi"));
+    }
+}
+}
+
+
+<h1>Kisi Duzenle</h1>
+
+
+    <form method="post" action="" > 
+        <fieldset>
+        <legend>Kisi Guncelle</legend>
+            <div>
+                <label>Isim:</label>
+                <input name="Isim" type="text" size="50" value="@Isim" />
+            </div>
+            <div>
+                <label>Soyad:</label>
+                <input name="Soyad" type="text" size="50" value="@Soyad" />
+            </div>
+            <div>
+                <label>Yas:</label>
+                <input name="Yas" type="text" size="50" value="@Yas" />
+            </div>
+            <div>
+                <label>&nbsp;</label>
+                <input type="submit" value="Guncelle" class="submit" />
+            </div>
+        </fieldset>
+    </form>
+
+@Html.ValidationSummary("Errors with your submission:")

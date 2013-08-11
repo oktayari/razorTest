@@ -1,0 +1,7 @@
+﻿
+@if (WebSecurity.IsAuthenticated) {
+       <h1> Welcome Secure Zone</h1>
+}else
+{
+  Response.Redirect("~/Account/Login.cshtml");
+}

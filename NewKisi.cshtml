@@ -1,0 +1,62 @@
+﻿@{
+  
+
+    var db = Database.Open("razorTest");
+    var isim = Request["Isim"];
+    var soyad = Request["Soyad"];
+    var yas = Request["Yas"];
+
+    if (IsPost) {
+        // Read Kisi Isim.
+        isim = Request["Isim"];
+        if (isim.IsEmpty()) {
+            ModelState.AddError("Isim", "Isim Zorunlu Alan.");
+        }
+        // Read Kisi Soyad.
+        soyad = Request["Soyad"];
+        if (soyad.IsEmpty()) {
+             ModelState.AddError("Soyad", "Soyad Zorunlu Alan.");
+        }
+         // Read Kisi Yas.
+        yas = Request["Yas"];
+        if (yas.IsEmpty()) {
+             ModelState.AddError("Yas", "Yas Zorunlu Alan.");
+        }
+      
+        if(ModelState.IsValid) {
+            var insertQuery = "INSERT INTO Kisi (Isim, Soyad, Yas) " +
+            "VALUES (@0, @1, @2)";
+                db.Execute(insertQuery, isim, soyad, yas);
+            // Kisileri listele.
+                Response.Redirect(@Href("~/ListKisi"));
+            }
+        }
+   
+}
+
+<h1> Kisi Ekle </h1>
+<form method="post" action="">
+<fieldset>
+<legend>Kisi Ekle</legend>
+    <div>
+        <label>Isim:</label>
+        <input name="Isim" type="text" size="50" value="@isim" />
+    </div>
+    <div>
+        <label>Soyad:</label>
+        <input name="Soyad" type="text" size="50" value="@soyad" />
+    </div>
+
+    <div>
+        <label>Yas:</label>
+        <input name="Yas" type="text" size="50" value="@yas" />
+    </div>
+    <div>
+        <label>&nbsp;</label>
+        <input type="submit" value="Kaydet" class="submit" />
+    </div>
+</fieldset>
+</form>
+
+@Html.ValidationSummary("Errors with your submission:")
+

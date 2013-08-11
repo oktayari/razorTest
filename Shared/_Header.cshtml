@@ -1,0 +1,20 @@
+﻿
+@{
+   var path = Request.FilePath;
+   var pageUrl = this.Request.Url;
+}
+     
+    <div id="left" class="float-left">
+         <p>RAZOR ARGE WEB PAGES  </p>
+         <p> @DateTime.Now </br>
+             File Path = @path </br>
+              Url Path = @pageUrl</p>
+     </div>
+
+    <div id="right" class="float-right" style="padding: 10px 25px 5px 5px">
+      @Gravatar.GetHtml("oktayari@yahoo.com", 80)
+    </div>
+
+
+
+

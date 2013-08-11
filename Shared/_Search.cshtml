@@ -1,0 +1,30 @@
+﻿
+<div id="nav">
+
+    <div id="left" class="float-left" style="padding: 5px 5px 5px 30px">
+   
+       @Bing.SearchBox(siteUrl: "http://localhost:8214")
+
+   </div>
+
+    <div id="right" class="float-right" style="padding: 20px 35px 5px 5px">
+            @if (WebSecurity.IsAuthenticated) {
+                <text>
+                 Selam, <a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>!
+                      <form id="logoutForm" action="~/Account/Logout" method="post">
+                       @AntiForgery.GetHtml()
+                       <a href="javascript:document.getElementById('logoutForm').submit()">Cikis</a>
+                      </form>
+                 </text>
+                        } else {
+                       <ul>
+                          <li><a href="~/Account/Register">Kaydol</a></li>
+                          <li><a href="~/Account/Login">Giris</a></li>
+                        </ul>
+                    }
+       
+    </div>
+
+    </div>
+
+ 

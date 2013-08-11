@@ -1,0 +1,23 @@
+﻿@{ 
+    var fileName = "";
+    if (IsPost) {
+        var fileSavePath = "";
+        var uploadedFile = Request.Files[0];
+        fileName = Path.GetFileName(uploadedFile.FileName);
+        fileSavePath = Server.MapPath("~/App_Data/UploadedFiles/" + fileName);
+        uploadedFile.SaveAs(fileSavePath);
+    } 
+}
+
+<h1> Coklu Dosya Yukleme</h1>
+
+@FileUpload.GetHtml(
+    initialNumberOfFiles:1, 
+    allowMoreFilesToBeAdded:true, 
+    includeFormTag:true, 
+    addText:"Dosya Ekle", 
+    uploadText:"Yukle")
+
+    @if (IsPost) {
+        <span>Dosya Yuklendi!</span><br/>
+    } 

@@ -1,0 +1,30 @@
+﻿@{ 
+  Layout =  "~/Shared/_BaseLayoutB.cshtml";
+    AppState["pageStart"] = "Web Page Razor Global Variable from _PageStart.cshtml ";
+
+} 
+
+@{
+  
+    try{
+         RunPage();
+       }
+        catch(Exception ex){
+
+            var message = ex.Message + "\n";
+            var stack = ex.StackTrace;
+
+            var logentry = DateTime.Now + "\n" + message + stack;
+                        logentry += "\n=========================\n";
+            var location = Server.MapPath("~/App_Data/");
+            var filename = "errorlog.txt";
+            var path = Path.Combine(location, filename);
+
+             File.AppendAllText(path, logentry);
+
+            Response.Redirect("~/Error/Error.cshtml?source=" + 
+             HttpUtility.UrlEncode(Request.AppRelativeCurrentExecutionFilePath) +
+              "===>" +
+              ex.Message );
+         }
+}

@@ -1,0 +1,25 @@
+﻿@{ 
+
+    var db = Database.Open("razorTest") ;
+    var selectQueryString = "SELECT * FROM Kisi ORDER BY Isim";
+    var data = db.Query(selectQueryString);
+    var grid = new WebGrid(source: data,
+                defaultSort: "Isim", 
+                rowsPerPage: 5);
+} 
+
+
+<h1>WebGridDemo </h1>
+
+
+<div id="grid">
+   @grid.GetHtml(
+    tableStyle: "grid",
+    headerStyle: "head",
+    alternatingRowStyle: "alt",
+    columns: grid.Columns(
+    grid.Column("Isim", "Isim", style: "kisi"),
+    grid.Column("Soyad", format:@<strong>@item.Soyad</strong>),
+    grid.Column("Yas", format:@<text>@item.Yas</text>)
+))
+</div>

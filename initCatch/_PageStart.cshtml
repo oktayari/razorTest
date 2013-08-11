@@ -1,0 +1,13 @@
+﻿@{ 
+    try
+    {
+        RunPage();
+    }
+    catch (Exception ex)
+    {
+        Response.Redirect("~/Error/Error.cshtml?source=" +  
+        HttpUtility.UrlEncode(Request.AppRelativeCurrentExecutionFilePath) + 
+        "==>" +
+        ex.Message);
+    }
+}

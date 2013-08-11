@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> BaseLayout for Razor Web Arge</title>
+    <link href="@Href("/Styles/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+    <div id="container">
+
+       @RenderSection("header", required: false)
+
+       @RenderPage("/Shared/_Header.cshtml")
+    
+       @RenderPage("/Shared/_Search.cshtml")
+       
+      
+       @RenderPage("/Shared/_Navigator.cshtml")
+    
+          <div id="body">
+             @RenderBody()
+          </div>
+      
+       @RenderSection("list", required: false)
+       
+       @RenderPage("/Shared/_Footer.cshtml")
+ 
+       @RenderSection("footer", required: false)
+
+       @Analytics.GetGoogleHtml("oktayari70@gmail.com")
+
+
+      </div>
+
+</body>
+
+</html>

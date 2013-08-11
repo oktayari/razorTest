@@ -1,0 +1,28 @@
+﻿@{
+    var customerName = Request["customerName"];
+    var customerRequest = Request["customerRequest"];
+
+    try {
+     
+        WebMail.Send(to:"oktayari@yahoo.com",
+        subject:@customerName,
+        body: @customerRequest);
+ 
+
+            <p>Sayin, <b>@customerName</b>,</p>
+            <p> Sikayetiniz  dikkate alinmistir ..</p>
+            <p> Sikayetiniz ilgili musteri temsilcisine iletilecektir. :</p>
+            <p><b>@customerRequest</b></p>
+
+    }
+    catch (Exception ex ) {
+        <text> 
+        <b>Email => <em>gonderilemedi</em>.</b> 
+             SMTP Server , UserName,  Password, from _AppStart.cshtml de tanimlanmis olmali. 
+        </text>
+    }
+}
+
+
+
+

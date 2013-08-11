@@ -1,0 +1,16 @@
+﻿@{
+    bool deleteSuccess = false;
+    var fileName = "";
+    
+        fileName = Request["fileName"];
+        var fullPath = Server.MapPath("~/App_Data/" + fileName);
+
+        if (File.Exists(fullPath))
+        {
+            File.Delete(fullPath);
+            deleteSuccess = true;
+        }
+
+         Response.Redirect("~/FileIODemo");
+    
+ }

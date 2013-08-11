@@ -1,0 +1,60 @@
+﻿@{ 
+     WebImage originalImage = null; 
+     WebImage thumbnailImage = null; 
+     WebImage watermarkedImage = null; 
+
+     var imageFileName = ""; 
+
+     if(IsPost) 
+     { 
+         originalImage = WebImage.GetImageFromRequest(); 
+
+         if(originalImage != null) 
+         { 
+             imageFileName = Guid.NewGuid().ToString() + "_" + 
+             Path.GetFileName(originalImage.FileName); 
+             originalImage.Save(@"~\images\" + imageFileName); 
+             watermarkedImage = originalImage.AddTextWatermark("Oka Test", 
+                                 fontColor:"#00FFFF", 
+                                 fontSize: 20, 
+                                 fontFamily: "Tahoma", 
+                                 horizontalAlign: "Left", 
+                                 verticalAlign: "Top", 
+                                 padding: 10); 
+            watermarkedImage.Save(@"~\images\watermarked_" + imageFileName); 
+
+             thumbnailImage = originalImage.Resize(width: 120, height:120, preserveAspectRatio: true); 
+             thumbnailImage.Save(@"~\images\thumb_" + imageFileName); 
+
+             
+
+         } 
+     } 
+} 
+
+
+<h1> Image Demo </h1>
+
+<form action="" method="post" enctype="multipart/form-data"> 
+     @Html.Label("Resim secin:", "imageUpload") 
+     <input type="file" name="imageUpload" /><br/> 
+     <input type="submit" value="Yukle" /> 
+ </form> 
+
+ <h1>Yuklenen Resimler</h1> 
+ @if(imageFileName != "") 
+ { 
+     <div> 
+     Original Image: <br /> 
+     <img src="images/@imageFileName" alt="Original Image" /> 
+     </div> 
+    <div> 
+     WaterMarked Image: <br /> 
+        <img src="images/watermarked_@(imageFileName)" alt="Watermarked Image" /> 
+     </div> 
+
+    <div> 
+     Thumbnail Image: <br /> 
+     <img src="images/thumb_@(imageFileName)" alt="Thumbnail Image" /> 
+     </div> 
+ }
